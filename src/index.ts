@@ -1,5 +1,5 @@
 import express from 'express';
-import testHandler from './api/test';
+import testHandler from '@api/test';
 
 const app = express();
 const port = 2300;
