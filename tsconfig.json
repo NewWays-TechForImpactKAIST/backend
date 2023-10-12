@@ -6,12 +6,17 @@
     "outDir": "./dist",
     "strict": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@api/*": [
+        "api/*"
+      ]
+    }
   },
   "include":[
-    "src/**/*"
+    "src"
   ]
 }
