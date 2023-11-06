@@ -8,6 +8,7 @@ if (!NODE_ENV) {
   throw new Error("NODE_ENV not specified");
 }
 
+// loads environment variables from .env.<NODE_ENV> file in project root folder
 const envFile = path.join(
   path.resolve(__dirname, "../../"),
   `.env.${NODE_ENV}`,

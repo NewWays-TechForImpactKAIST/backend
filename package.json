@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npx tsc -w\" \"tsc-alias -w \" \"nodemon ./dist/index.js\""
+    "start": "concurrently \"npx tsc -w\" \"tsc-alias -w \" \"nodemon ./dist/index.js\"",
+    "build": "tsc && tsc-alias",
+    "prod": "cross-env NODE_ENV=production node dist/index.js"
   },
   "keywords": [],
   "author": "",
