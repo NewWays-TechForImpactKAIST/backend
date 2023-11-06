@@ -1,5 +1,6 @@
 import express from 'express';
 import testHandler from '@api/test';
+import dotenv from "dotenv";
 
 const app = express();
 const port = 2300;
