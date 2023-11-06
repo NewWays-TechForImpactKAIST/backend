@@ -1,10 +1,9 @@
 import mongoose from "mongoose";
 import * as process from "process";
-import dotenv from "dotenv";
 
-import { ScrapDataSchema } from "@db/schema";
+import "@/config/env";
+import { ScrapResultSchema } from "@/db/schema";
 
-dotenv.config();
 mongoose
   .connect(
     process.env.MONGO_CONNECTION_URI ||
@@ -17,4 +16,8 @@ mongoose
     console.log(err);
   });
 
-export const Scrap = mongoose.model("council", ScrapDataSchema);
+export const ScrapResultModel = mongoose.model(
+  "council",
+  ScrapResultSchema,
+  "local_council",
+);

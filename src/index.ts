@@ -1,23 +1,35 @@
-import express from "express";
-import testHandler from "@api/test";
-import "@config/env";
+import express, { Request, Response, NextFunction } from "express";
+import cors from "cors";
+import testHandler from "@/routes/test";
+import scrapResultHandler from "@/routes/scrapResult";
 
 const app = express();
 const port = 2300;
 
-console.log(1);
-console.log(process.env.NODE_ENV);
-console.log(process.env.MONGO_CONNECTION_URI);
-console.log(2);
+app.use(express.json());
 
-app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("TechForImpact Backend API Server");
+// Allow CORS from all origins
+app.use(cors());
+
+app.get("/", (req: Request, res: Response) => {
+  res.status(200).send("TechForImpact Backend API Server");
 });
 
 app.use("/test", testHandler);
+app.use("/scrapResult", scrapResultHandler);
 
+// Global 404 Handler
 app.use((req, res) => {
   res.status(404).send("Not Found");
+});
+
+// Global Error Handler
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  console.error(err.stack);
+  if (req.xhr) {
+    res.status(500).send("Internal Server Error");
+  }
+  next(err);
 });
 
 app.listen(port, () => {
