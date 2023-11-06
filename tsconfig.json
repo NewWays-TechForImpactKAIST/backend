@@ -11,12 +11,10 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./src",
     "paths": {
-      "@api/*": [
-        "api/*"
-      ]
+      "@api/*": ["api/*"],
+      "@db/*": ["db/*"],
+      "@config/*": ["../config/*"]
     }
   },
-  "include":[
-    "src"
-  ]
+  "include": ["src"]
 }
