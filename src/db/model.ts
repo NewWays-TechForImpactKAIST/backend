@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import * as process from "process";
 
-import "@/config/env";
+import "@/config";
 import { ScrapResultSchema } from "@/db/schema";
 
 mongoose

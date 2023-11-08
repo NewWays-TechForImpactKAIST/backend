@@ -1,7 +1,6 @@
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
-import testHandler from "@/routes/test";
-import scrapResultHandler from "@/routes/scrapResult";
+import { testRouter, scrapResultRouter } from "@/routes";
 
 const app = express();
 const port = 2300;
@@ -15,8 +14,8 @@ app.get("/", (req: Request, res: Response) => {
   res.status(200).send("TechForImpact Backend API Server");
 });
 
-app.use("/test", testHandler);
-app.use("/scrapResult", scrapResultHandler);
+app.use("/test", testRouter);
+app.use("/scrapResult", scrapResultRouter);
 
 // Global 404 Handler
 app.use((req, res) => {

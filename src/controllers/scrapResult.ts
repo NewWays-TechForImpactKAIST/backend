@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ScrapResultModel } from "@/db/mongo";
+import { ScrapResultModel } from "@/db/model";
 
 export const getScrapResult = async (req: Request, res: Response) => {
   try {
