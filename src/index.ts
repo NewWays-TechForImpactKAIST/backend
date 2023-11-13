@@ -2,8 +2,10 @@ import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import { testRouter, scrapResultRouter } from "@/routes";
 
+import "@/config";
+
 const app = express();
-const port = 2300;
+const port = parseInt(process.env.PORT || "2300");
 
 app.use(express.json());
 

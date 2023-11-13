@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  server:
+    image: "nginxdemos/hello:latest" # TODO: replace image
+    ports:
+      - "${PORT:?}:80"
+    environment:
+      - MONGO_CONNECTION_URI=${MONGO_CONNECTION_URI:?}
