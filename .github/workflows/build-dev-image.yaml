@@ -2,15 +2,11 @@ name: Push Dev Image to GitHub Packages on Pushes to Main
 
 # when tagging action success
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - main
+  push:
+    branches: ["main"]
 
 jobs:
-  if_merged:
-    if: github.event.pull_request.merged == true
+  build-and-push:
     name: Build and Push
     runs-on: ubuntu-latest
 
