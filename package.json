@@ -6,7 +6,8 @@
   "scripts": {
     "start": "concurrently \"npx tsc -w\" \"tsc-alias -w \" \"nodemon ./dist/index.js\"",
     "build": "tsc && tsc-alias",
-    "prod": "cross-env NODE_ENV=production node dist/index.js"
+    "clean": "rm -rf dist/",
+    "prod": "cross-env TZ=Asia/Seoul NODE_ENV=production node dist/index.js"
   },
   "keywords": [],
   "author": "",

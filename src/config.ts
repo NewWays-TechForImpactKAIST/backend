@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 
-const NODE_ENV = process.env.NODE_ENV || "development";
+const NODE_ENV = process.env.NODE_ENV;
 
 if (!NODE_ENV) {
   throw new Error("NODE_ENV not specified");
