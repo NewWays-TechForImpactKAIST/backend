@@ -1,5 +1,6 @@
 # 다양성 평가 리포트 웹사이트 백엔드
 
+**주의: 현재 프로젝트는 Node.js에서 FastAPI로 이관되었습니다! 이 리포지토리는 보관용입니다. 코드 확인, 수정은 [backend-python]([url](https://github.com/NewWays-TechForImpactKAIST/backend-python))에서 이루어집니다!**
 ## 프로젝트 소개
 - 사용 기술: Node.js(TypeScript + Express.js), MongoDB
 
